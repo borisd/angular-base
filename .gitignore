@@ -1,0 +1,17 @@
+# general
+.idea
+.DS_Store
+*~
+.sass-cache
+.tmp
+
+# package control
+node_modules
+app/vendor
+
+# logs
+npm-debug.log
+
+# build
+build/tmp
+build/dist
