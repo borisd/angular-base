@@ -6,6 +6,25 @@ browserSync = require("browser-sync")
 reload      = browserSync.reload
 pkg         = require("./package")
 del         = require("del")
+replace     = require('gulp-replace-task')
+fs          = require('fs')
+
+
+setEnv = (env) ->
+  # Read the settings from the right file
+  settings = JSON.parse(fs.readFileSync(config.consts + '/env/' + env + '.json', 'utf8'))
+
+  # Replace each placeholder with the correct value for the variable.
+  gulp.src(config.consts + '/env/consts.coffee')
+    .pipe(replace({ patterns: [{ match: 'consts', replacement: settings }] }))
+    .pipe($.coffee())
+    .pipe(gulp.dest(config.tmp + '/config'))
+
+gulp.task 'env:dev', ->
+  setEnv('dev')
+
+gulp.task 'env:prod', ->
+  setEnv('prod')
 
 # Generate angular templates using html2js
 gulp.task "templates", ->
@@ -40,8 +59,9 @@ gulp.task "coffee", ->
   .pipe(gulp.dest(config.tmp))
   .pipe $.size(title: "coffee")
 
-gulp.task "build", ["clean"], (cb) ->
+gulp.task "build", ["env:dev"], (cb) ->
   runSequence [
+    "env:dev"
     "sass"
     "coffee"
     "templates"
@@ -78,6 +98,7 @@ gulp.task "images", ->
 
 gulp.task "build:dist", ["clean"], (cb) ->
   runSequence [
+    "env:prod"
     "build"
     "copy"
     "copy:assets"

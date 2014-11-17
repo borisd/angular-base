@@ -37,6 +37,7 @@ angular.module "views", [
 ]
 
 angular.module("app", [
+  "consts"
   "vendor"
   "routes"
   "filters"
