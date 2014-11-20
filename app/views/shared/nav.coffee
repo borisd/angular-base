@@ -1,4 +1,5 @@
-angular.module("controllers").controller("NavCtrl", [
-  () ->
-    return
-])
+angular.module("app")
+  .controller("NavCtrl", [
+    () ->
+      return
+  ])

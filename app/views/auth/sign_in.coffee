@@ -1,4 +1,5 @@
-angular.module("views.auth").controller("SignInController", [
-  () ->
-    return
-])
+angular.module("app")
+  .controller("SignInController", [
+    () ->
+      return
+  ])

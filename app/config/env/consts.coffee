@@ -1,1 +1,1 @@
-angular.module('consts', []).constant('CONSTS', @@consts)
+angular.module('app').constant('CONSTS', @@consts)

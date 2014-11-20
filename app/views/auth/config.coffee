@@ -1,4 +1,4 @@
-angular.module('views.auth', ['services'])
+angular.module('app')
   .config ($stateProvider) ->
     $stateProvider.state("auth.sign_in",
       url: "/sign_in"

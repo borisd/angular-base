@@ -1,4 +1,4 @@
-angular.module("interceptors.http", []).factory "httpInterceptor",
+angular.module('app').factory "httpInterceptor",
   ($q, $log) ->
     request: (config) ->
       config

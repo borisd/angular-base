@@ -1,4 +1,4 @@
-angular.module('views.apps', ['services'])
+angular.module('app')
   .config ($stateProvider) ->
     $stateProvider.state("apps.index",
       url: ""

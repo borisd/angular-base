@@ -1,4 +1,4 @@
-angular.module("directives.theme", [])
+angular.module("app")
   .directive("toggleNavCollapsedMin", [
     "$rootScope"
     ($rootScope) ->

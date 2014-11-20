@@ -1,4 +1,4 @@
-angular.module("routes", [])
+angular.module('app')
   .config(['$stateProvider', '$urlRouterProvider', '$logProvider', '$httpProvider',
     ($stateProvider, $urlRouterProvider, $logProvider, $httpProvider) ->
 

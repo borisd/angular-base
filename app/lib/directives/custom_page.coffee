@@ -1,4 +1,4 @@
-angular.module("directives.custom_page", []).directive "customPage", ->
+angular.module('app').directive "customPage", ->
   restrict: "A"
   controller: [
     "$scope", "$element", "$location", ($scope, $element, $location) ->
