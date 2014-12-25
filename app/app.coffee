@@ -3,6 +3,5 @@ angular.element(document).ready ->
 
 angular.module "app", [
   "ui.router"
-  "xeditable"
   "angularSpinner"
 ]
